@@ -12,8 +12,12 @@ pub struct VisitContext<'a> {
 }
 
 pub trait ContentVisitor {
-    fn visit_block(&mut self, block: &ContentBlock);
-    fn enter_block(&mut self, block: &ContentBlock, ctx:&VisitContext);
-    fn exit_block(&mut self, block: &ContentBlock, ctx:&VisitContext);
+    // 进入一个块之前调用
+    fn enter_block(&mut self, block: &ContentBlock, ctx: &VisitContext);
+
+    // 退出一个块之后调用
+    fn exit_block(&mut self, block: &ContentBlock, ctx: &VisitContext);
+
+    // 处理行内元素
     fn visit_inline(&mut self, span: &InlineSpan);
 }
