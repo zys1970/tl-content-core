@@ -15,10 +15,10 @@ pub enum ContentBlock {
     },
     List {
         ordered: bool,
-        items: Vec<InlineContent>,
+        items: Vec<ContentBlock>,
     },
     Quote {
-        content: Vec<InlineContent>,
+        content: Vec<ContentBlock>,
     },
     Table {
         alignment: Vec<Alignment>,
