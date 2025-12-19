@@ -13,4 +13,11 @@ pub enum InlineSpan {
         text: String,
         url: String,
     },
+    Image {
+        alt: String,
+        url: String,
+        title: Option<String>,
+    },
+    Strikethrough(String),
+    Html(String),
 }

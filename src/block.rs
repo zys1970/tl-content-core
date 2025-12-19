@@ -20,5 +20,18 @@ pub enum ContentBlock {
     Quote {
         content: Vec<InlineContent>,
     },
+    Table {
+        alignment: Vec<Alignment>,
+        header: Vec<InlineContent>,
+        rows: Vec<Vec<InlineContent>>,
+    },
     Divider,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum Alignment {
+    Left,
+    Center,
+    Right,
+    None,  // 或 Default
 }
